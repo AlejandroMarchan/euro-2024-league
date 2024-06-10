@@ -1,4 +1,4 @@
-# WORLD CUP LEAGUE
+# EURO 2024 LEAGUE
 
 You can try the app in the following url: WIP
 
