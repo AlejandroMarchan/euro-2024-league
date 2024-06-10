@@ -8,6 +8,7 @@ import logging
 import sys
 import os
 from datetime import datetime, timedelta
+import locale
 import json
 import time
 
@@ -27,6 +28,9 @@ log.setLevel(logging.INFO)
 
 log = logging.getLogger("app")
 log.setLevel(logging.INFO)
+
+# Set the locale to Spanish (Spain)
+locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
 
 MATCH_TAGS = [
     'Alemania-Escocia',
@@ -447,7 +451,7 @@ def load_matches(x):
                 match['date'] + ' ' + match['time'], '%Y-%m-%d %H:%M')
 
             row = {
-                'date': date.strftime('%b %d, %Y, %H:%M'),
+                'date': date.strftime('%a, %d %b, %H:%M').title(),
                 'match': f"![home_flag]({home_flag}) **{home_team}** vs **{away_team}** ![away_flag]({away_flag})",
                 'match_key': match_tag,
                 'home_team': home_team,
