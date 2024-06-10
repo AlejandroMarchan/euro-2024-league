@@ -1,0 +1,91 @@
+body {
+    background-color:#f3f6f8;
+    overflow-x: hidden;
+}
+
+@media (max-width: 1000px) {
+    body {
+        font-size: 3vw;
+    }
+
+    #matchs-table {
+        width: 90vw;
+    }
+
+    #matchs-table .column-0 {
+        white-space: normal !important;
+    }
+
+    #classification-table {
+        width: 90vw;
+    }
+}
+
+@media (min-width: 1000px) {
+    #matchs-table {
+        width: 60vw;
+    }
+
+    #matchs-table .dash-spreadsheet-container {
+        max-height: 100vh;
+        height: 78vh;
+    }
+
+    #matchs-table .column-3, 
+    #matchs-table .column-4,
+    #matchs-table  .column-5,
+    #matchs-table  .column-6,
+    #matchs-table  .column-7,
+    #matchs-table  .column-8,
+    #matchs-table  .column-9,
+    #matchs-table  .column-10,
+    #matchs-table  .column-11,
+    #matchs-table  .column-12,
+    #matchs-table  .column-13,
+    #matchs-table  .column-14,
+    #matchs-table  .column-15,
+    #matchs-table  .column-16,
+    #matchs-table  .column-17,
+    #matchs-table  .column-18,
+    #matchs-table  .column-19,
+    #matchs-table  .column-20,
+    #matchs-table  .column-21,
+    #matchs-table  .column-22,
+    #matchs-table  .column-23,
+    #matchs-table  .column-24,
+    #matchs-table  .column-25,
+    #matchs-table  .column-26,
+    #matchs-table  .column-27,
+    #matchs-table  .column-28,
+    #matchs-table  .column-29,
+    #matchs-table  .column-30 {
+        min-width: 180px !important;
+        width: 180px !important;
+    }
+
+    #classification-table {
+        width: 35vw;
+    }
+
+    #classification-table .dash-spreadsheet-container {
+        max-height: 100vh;
+        height: 78vh;
+    }
+}
+
+td img {
+    width: 4vw;
+    max-width: 25px;
+}
+
+.cell-markdown {
+    text-align: center !important;
+}
+
+.cell-markdown p {
+    margin-bottom: 0;
+}
+
+.dash-spreadsheet-inner {
+    overflow-x: scroll;
+}
