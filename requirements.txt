@@ -1,6 +1,6 @@
-requests
-dash
-gunicorn
-dash-bootstrap-components
-dash-extensions
-rich
+dash==2.6.1
+dash_bootstrap_components==1.0.3
+dash_extensions==1.0.16
+requests==2.31.0
+rich==13.7.1
+gunicorn==20.1.0
