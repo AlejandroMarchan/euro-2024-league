@@ -30,7 +30,10 @@ log = logging.getLogger("app")
 log.setLevel(logging.INFO)
 
 # Set the locale to Spanish (Spain)
-locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
+try:
+    locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
+except locale.Error:
+    locale.setlocale(locale.LC_TIME, 'en_US.UTF-8')
 
 MATCH_TAGS = [
     'Alemania-Escocia',
