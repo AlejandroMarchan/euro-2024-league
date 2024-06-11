@@ -1,6 +1,6 @@
-dash==2.6.1
+dash==2.13.0
 dash_bootstrap_components==1.0.3
-dash_extensions==1.0.16
+dash_extensions==0.1.10
 requests==2.31.0
 rich==13.7.1
-gunicorn==20.1.0
+gunicorn==21.2.0
