@@ -571,8 +571,8 @@ def load_matches(x):
                 log.info(
                     f'Error parsing {pred_row["nombre"]} predictions: {e}')
 
-        pred_row['total'] = pred_row['res_exacto'] * 5 + \
-            pred_row['res_partido'] * 2 + \
+        pred_row['total'] = pred_row['res_exacto'] * 10 + \
+            pred_row['res_partido'] * 5 + \
             pred_row['octavos'] * 6 + \
             pred_row['cuartos'] * 12 + \
             pred_row['semis'] * 24 + \
