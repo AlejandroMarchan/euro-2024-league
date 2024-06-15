@@ -453,6 +453,10 @@ def load_matches(x):
             date = datetime.strptime(
                 match['date'] + ' ' + match['time'], '%Y-%m-%d %H:%M')
 
+            if match_tag == 'Alemania-Escocia':
+                home_score = 5
+                away_score = 1
+
             row = {
                 'date': date.strftime('%a, %d %b, %H:%M').title(),
                 'match': f"![home_flag]({home_flag}) **{home_team}** vs **{away_team}** ![away_flag]({away_flag})",
