@@ -470,7 +470,7 @@ def load_matches(x):
                 home_score = 2
                 away_score = 1
             elif match_tag == 'Polonia-Países Bajos':
-                home_score = 0
+                home_score = 1
                 away_score = 0
 
             row = {
