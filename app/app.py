@@ -436,6 +436,10 @@ def load_matches(x):
 
     tic = time.perf_counter()
 
+    for round in rounds:
+        round['matches'] = sorted(round['matches'], key=lambda x: datetime.strptime(
+            x['date'] + ' ' + x['time'], '%Y-%m-%d %H:%M'))
+
     match_rows = []
     added_matches = []
 
@@ -465,6 +469,9 @@ def load_matches(x):
             elif match_tag == 'Italia-Albania':
                 home_score = 2
                 away_score = 1
+            elif match_tag == 'Polonia-Países Bajos':
+                home_score = 0
+                away_score = 0
 
             row = {
                 'date': date.strftime('%a, %d %b, %H:%M').title(),
