@@ -168,11 +168,11 @@ CLASSIFICATION_COLUMNS = [
         "id": 'total',
     },
     {
-        "name": 'Res. exacto (5 ptos)',
+        "name": 'Res. exacto (10 ptos)',
         "id": 'res_exacto'
     },
     {
-        "name": 'Res. partido (2 ptos)',
+        "name": 'Res. partido (5 ptos)',
         "id": 'res_partido',
     },
     {
