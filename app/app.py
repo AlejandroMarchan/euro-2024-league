@@ -451,47 +451,15 @@ def load_matches(x):
                 match['team2']['name'], match['team2']['name'])
             home_flag = f"assets/country-flags/{match['team1']['code']}.png"
             away_flag = f"assets/country-flags/{match['team2']['code']}.png"
-            home_score = match.get('score1', None)
-            away_score = match.get('score2', None)
+            score = match.get('score', {}).get('ft', None)
+            home_score = score[0] if score else None
+            away_score = score[1] if score else None
             match_tag = f"{home_team}-{away_team}"
             date = datetime.strptime(
                 match['date'] + ' ' + match['time'], '%Y-%m-%d %H:%M')
 
-            if match_tag == 'Alemania-Escocia':
-                home_score = 5
-                away_score = 1
-            elif match_tag == 'Hungría-Suiza':
-                home_score = 1
-                away_score = 3
-            elif match_tag == 'España-Croacia':
-                home_score = 3
-                away_score = 0
-            elif match_tag == 'Italia-Albania':
-                home_score = 2
-                away_score = 1
-            elif match_tag == 'Polonia-Países Bajos':
-                home_score = 1
-                away_score = 2
-            elif match_tag == 'Eslovenia-Dinamarca':
-                home_score = 1
-                away_score = 1
-            elif match_tag == 'Serbia-Inglaterra':
+            if match_tag == 'Croacia-Albania':
                 home_score = 0
-                away_score = 1
-            elif match_tag == 'Rumanía-Ucrania':
-                home_score = 3
-                away_score = 0
-            elif match_tag == 'Bélgica-Eslovaquia':
-                home_score = 0
-                away_score = 1
-            elif match_tag == 'Austria-Francia':
-                home_score = 0
-                away_score = 1
-            elif match_tag == 'Turquía-Georgia':
-                home_score = 3
-                away_score = 1
-            elif match_tag == 'Portugal-República Checa':
-                home_score = 2
                 away_score = 1
 
             row = {
