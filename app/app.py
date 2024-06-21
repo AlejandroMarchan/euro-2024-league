@@ -476,6 +476,12 @@ def load_matches(x):
             elif match_tag == 'España-Italia':
                 home_score = 1
                 away_score = 0
+            elif match_tag == 'Eslovaquia-Ucrania':
+                home_score = 1
+                away_score = 2
+            elif match_tag == 'Polonia-Austria':
+                home_score = 1
+                away_score = 3
 
             row = {
                 'date': date.strftime('%a, %d %b, %H:%M').title(),
