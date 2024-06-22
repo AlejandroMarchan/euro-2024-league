@@ -622,8 +622,13 @@ def load_matches(x):
 
     pred_rows.sort(key=lambda x: x['total'], reverse=True)
 
-    for i, row in enumerate(pred_rows):
-        row['position'] = i + 1
+    index = 0
+    prev_total = 0
+    for row in pred_rows:
+        if row['total'] != prev_total:
+            index += 1
+        prev_total = row['total']
+        row['position'] = index
 
     if len(show_groups) == 0:
         match_rows = [row for row in match_rows if row['type'] != 'group']
