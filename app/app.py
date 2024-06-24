@@ -467,7 +467,7 @@ def load_matches(x):
             elif match_tag == 'Albania-España':
                 home_score = 0
                 away_score = 1
-            elif match_tag == 'Italia-Croacia':
+            elif match_tag == 'Croacia-Italia':
                 home_score = 1
                 away_score = 1
 
