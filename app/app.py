@@ -458,39 +458,12 @@ def load_matches(x):
             date = datetime.strptime(
                 match['date'] + ' ' + match['time'], '%Y-%m-%d %H:%M')
 
-            if match_tag == 'Croacia-Albania':
-                home_score = 2
-                away_score = 2
-            elif match_tag == 'Alemania-Hungría':
-                home_score = 2
-                away_score = 0
-            elif match_tag == 'Escocia-Suiza':
+            if match_tag == 'Suiza-Alemania':
                 home_score = 1
                 away_score = 1
-            elif match_tag == 'Eslovenia-Serbia':
-                home_score = 1
-                away_score = 1
-            elif match_tag == 'Dinamarca-Inglaterra':
-                home_score = 1
-                away_score = 1
-            elif match_tag == 'España-Italia':
-                home_score = 1
-                away_score = 0
-            elif match_tag == 'Eslovaquia-Ucrania':
-                home_score = 1
-                away_score = 2
-            elif match_tag == 'Polonia-Austria':
-                home_score = 1
-                away_score = 3
-            elif match_tag == 'Países Bajos-Francia':
+            elif match_tag == 'Escocia-Hungría':
                 home_score = 0
-                away_score = 0
-            elif match_tag == 'Georgia-República Checa':
-                home_score = 1
                 away_score = 1
-            elif match_tag == 'Turquía-Portugal':
-                home_score = 0
-                away_score = 3
 
             row = {
                 'date': date.strftime('%a, %d %b, %H:%M').title(),
