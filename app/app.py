@@ -71,7 +71,15 @@ MATCH_TAGS = [
     'Eslovaquia-Rumanía',
     'Ucrania-Bélgica',
     'Georgia-Portugal',
-    'República Checa-Turquía'
+    'República Checa-Turquía',
+    '2024-06-29 18:00',
+    '2024-06-29 21:00',
+    '2024-06-30 18:00',
+    '2024-06-30 21:00',
+    '2024-07-01 18:00',
+    '2024-07-01 21:00',
+    '2024-07-02 18:00',
+    '2024-07-02 21:00'
 ]
 
 TEAMS_EN_ES = {
@@ -242,25 +250,25 @@ app.layout = html.Div(
                 'margin-top': '15px',
             }
         ),
-        # dbc.Row(
-        #     [
-        #         dbc.Col(
-        #             [
-        #                 dbc.Checklist(
-        #                     options=[
-        #                         {"label": "Mostrar fase de Grupos", "value": 1}
-        #                     ],
-        #                     value=[],
-        #                     id="groups-input",
-        #                     switch=True
-        #                 ),
-        #             ],
-        #             width="auto"
-        #         ),
-        #     ],
-        #     justify="center",
-        #     align="center",
-        # ),
+        dbc.Row(
+            [
+                dbc.Col(
+                    [
+                        dbc.Checklist(
+                            options=[
+                                {"label": "Mostrar fase de Grupos", "value": 1}
+                            ],
+                            value=[1],
+                            id="groups-input",
+                            switch=True
+                        ),
+                    ],
+                    width="auto"
+                ),
+            ],
+            justify="center",
+            align="center",
+        ),
         dbc.Row(
             [
                 dbc.Col(
@@ -407,15 +415,19 @@ def get_res_symbol(result):
     return res_symbol
 
 
+final_matches = []
+with open('tests/final_matches.json', 'r') as f:
+    final_matches = json.load(f)
+
+
 @app.callback(
     Input('placeholder', 'title'),
-    # Input('groups-input', 'value'),
+    Input('groups-input', 'value'),
     Output('matchs-table', 'data'),
     Output('classification-table', 'data'),
     Output('matchs-table', 'style_data_conditional'),
 )
-def load_matches(x):
-    show_groups = [1]
+def load_matches(x, show_groups):
     rounds = []
     tic = time.perf_counter()
 
@@ -425,6 +437,7 @@ def load_matches(x):
             'https://raw.githubusercontent.com/openfootball/euro.json/master/2024/euro.json', timeout=8)
         print(f'Response status code: {response.status_code}')
         rounds = response.json()['rounds']
+        rounds += final_matches
         # UNCOMMENT FOR TESTING
         # with open('tests/matches.json', 'r') as f:
         #     rounds = json.load(f)['rounds']
@@ -439,6 +452,8 @@ def load_matches(x):
     for round in rounds:
         round['matches'] = sorted(round['matches'], key=lambda x: datetime.strptime(
             x['date'] + ' ' + x['time'], '%Y-%m-%d %H:%M'))
+
+    prev_type = 'group'
 
     match_rows = []
     added_matches = []
@@ -455,8 +470,15 @@ def load_matches(x):
             home_score = score[0] if score else None
             away_score = score[1] if score else None
             match_tag = f"{home_team}-{away_team}"
+            match_key = match_tag
             date = datetime.strptime(
                 match['date'] + ' ' + match['time'], '%Y-%m-%d %H:%M')
+
+            round_type = round['name']
+            if round['name'].split(' ')[0] != 'Matchday':
+                match_tag = match['date'] + ' ' + match['time']
+            else:
+                round_type = 'group'
 
             if match_tag == 'Suiza-Alemania':
                 home_score = 1
@@ -486,13 +508,68 @@ def load_matches(x):
             row = {
                 'date': date.strftime('%a, %d %b, %H:%M').title(),
                 'match': f"![home_flag]({home_flag}) **{home_team}** vs **{away_team}** ![away_flag]({away_flag})",
-                'match_key': match_tag,
+                'match_key': match_key,
                 'home_team': home_team,
                 'away_team': away_team,
                 'tag': match_tag,
                 'result': 'Not started' if home_score is None else f'{home_score} - {away_score}',
-                'type': round['name']
+                'type': round_type
             }
+
+            if row['type'] == 'Round of 16' and prev_type == 'group':
+                match_rows.append(
+                    {
+                        'date': '-',
+                        'match': f"**OCTAVOS**",
+                        'match_key': '',
+                        'home_team': '',
+                        'away_team': '',
+                        'tag': '',
+                        'result': 'Not started',
+                        'type': ''
+                    }
+                )
+            elif row['type'] == 'Quarter-finals' and prev_type == 'Round of 16':
+                match_rows.append(
+                    {
+                        'date': '-',
+                        'match': f"**CUARTOS**",
+                        'match_key': '',
+                        'home_team': '',
+                        'away_team': '',
+                        'tag': '',
+                        'result': 'Not started',
+                        'type': ''
+                    }
+                )
+            elif row['type'] == 'Semi-finals' and prev_type == 'Quarter-finals':
+                match_rows.append(
+                    {
+                        'date': '-',
+                        'match': f"**SEMIS**",
+                        'match_key': '',
+                        'home_team': '',
+                        'away_team': '',
+                        'tag': '',
+                        'result': 'Not started',
+                        'type': ''
+                    }
+                )
+            elif row['type'] == 'Final' and prev_type == 'Semi-finals':
+                match_rows.append(
+                    {
+                        'date': '-',
+                        'match': f"**FINAL**",
+                        'match_key': '',
+                        'home_team': '',
+                        'away_team': '',
+                        'tag': '',
+                        'result': 'Not started',
+                        'type': ''
+                    }
+                )
+
+            prev_type = row['type']
 
             if match_tag not in added_matches and home_team != '--' and away_team != '--':
                 match_rows.append(row)
@@ -521,10 +598,15 @@ def load_matches(x):
             'campeon': 0,
         }
 
-        group_stage_preds = clean_preds[:36]  # 36 group stage predictions
-        octavos_teams = clean_preds[76:84]  # teams advancing to knockout stage
-        cuartos_teams = clean_preds[92:96]  # quarter-finalists
-        semis_teams = clean_preds[100:102]  # semi-finalists
+        group_stage_preds = clean_preds[:36] + \
+            clean_preds[76:84] + \
+            clean_preds[92:96] + \
+            clean_preds[100:102] + \
+            [clean_preds[105]]
+
+        octavos_teams = clean_preds[60:76]  # teams advancing to knockout stage
+        cuartos_teams = clean_preds[84:92]  # quarter-finalists
+        semis_teams = clean_preds[96:100]  # semi-finalists
         final_teams = clean_preds[102:104]  # finalists
         champion_team = clean_preds[106]  # winner
 
@@ -564,7 +646,10 @@ def load_matches(x):
                     if champion_team == '':
                         pred_row['campeon'] += 1
 
-                if match['result'] != 'Not started':
+                # Check if the teams are right
+                if match['type'] != 'group' and match['match_key'] != group_stage_preds[match_idx].split('·')[0]:
+                    match[file] = '-'
+                elif match['result'] != 'Not started':
                     real_result = [int(goals)
                                    for goals in match['result'].split('-')]
                     real_res_symbol = get_res_symbol(real_result)
