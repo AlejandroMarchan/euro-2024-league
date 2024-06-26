@@ -476,6 +476,12 @@ def load_matches(x):
             elif match_tag == 'Países Bajos-Austria':
                 home_score = 2
                 away_score = 3
+            elif match_tag == 'Inglaterra-Eslovenia':
+                home_score = 0
+                away_score = 0
+            elif match_tag == 'Dinamarca-Serbia':
+                home_score = 0
+                away_score = 0
 
             row = {
                 'date': date.strftime('%a, %d %b, %H:%M').title(),
@@ -485,7 +491,7 @@ def load_matches(x):
                 'away_team': away_team,
                 'tag': match_tag,
                 'result': 'Not started' if home_score is None else f'{home_score} - {away_score}',
-                'type': match['group']
+                'type': round['name']
             }
 
             if match_tag not in added_matches and home_team != '--' and away_team != '--':
@@ -532,25 +538,25 @@ def load_matches(x):
                     1].split('-')]
                 match[file] = f'{pred_result[0]} - {pred_result[1]}'
 
-                if match['type'] == 'R16':
+                if match['type'] == 'Round of 16':
                     if match['home_team'] in octavos_teams:
                         pred_row['octavos'] += 1
                     if match['away_team'] in octavos_teams:
                         pred_row['octavos'] += 1
 
-                if match['type'] == 'QR':
+                if match['type'] == 'Quarter-finals':
                     if match['home_team'] in cuartos_teams:
                         pred_row['cuartos'] += 1
                     if match['away_team'] in cuartos_teams:
                         pred_row['cuartos'] += 1
 
-                if match['type'] == 'semi':
+                if match['type'] == 'Semi-finals':
                     if match['home_team'] in semis_teams:
                         pred_row['semis'] += 1
                     if match['away_team'] in semis_teams:
                         pred_row['semis'] += 1
 
-                if match['type'] == 'FIN':
+                if match['type'] == 'Final':
                     if match['home_team'] in final_teams:
                         pred_row['final'] += 1
                     if match['away_team'] in final_teams:
