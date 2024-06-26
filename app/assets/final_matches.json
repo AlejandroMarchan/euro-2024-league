@@ -1274,13 +1274,7 @@
           "date": "2024-06-29",
           "time": "21:00",
           "team1": { "name": "Germany", "code": "GER" },
-          "team2": { "name": "Denmark", "code": "DEN" },
-          "score": {
-            "ft": [
-              3,
-              2
-            ]
-          }
+          "team2": { "name": "Denmark", "code": "DEN" }
         },
         {
           "date": "2024-06-30",
