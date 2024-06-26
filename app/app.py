@@ -679,7 +679,7 @@ def load_matches(x, show_groups):
         cuartos_teams = clean_preds[84:92]  # quarter-finalists
         semis_teams = clean_preds[96:100]  # semi-finalists
         final_teams = clean_preds[102:104]  # finalists
-        champion_team = clean_preds[106]  # winner
+        champion_team = clean_preds[105]  # winner
 
         for match in match_rows:
             if match['date'] == '-':
