@@ -416,7 +416,7 @@ def get_res_symbol(result):
 
 
 final_matches = []
-with open('tests/final_matches.json', 'r') as f:
+with open('app/assets/final_matches.json', 'r') as f:
     final_matches = json.load(f)
 
 
