@@ -59,8 +59,8 @@ body {
     #matchs-table  .column-28,
     #matchs-table  .column-29,
     #matchs-table  .column-30 {
-        min-width: 180px !important;
-        width: 180px !important;
+        min-width: 300px !important;
+        width: 300px !important;
     }
 
     #classification-table {

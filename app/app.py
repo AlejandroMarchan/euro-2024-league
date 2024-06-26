@@ -79,7 +79,14 @@ MATCH_TAGS = [
     '2024-07-01 18:00',
     '2024-07-01 21:00',
     '2024-07-02 18:00',
-    '2024-07-02 21:00'
+    '2024-07-02 21:00',
+    '2024-07-05 18:00',
+    '2024-07-05 21:00',
+    '2024-07-06 18:00',
+    '2024-07-06 21:00',
+    '2024-07-10 21:00 60',
+    '2024-07-10 21:00 61',
+    '2024-07-14 21:00'
 ]
 
 TEAMS_EN_ES = {
@@ -110,6 +117,31 @@ TEAMS_EN_ES = {
 }
 
 TEAMS_ES_EN = {v: k for k, v in TEAMS_EN_ES.items()}
+
+TEAMS_NAMES_CODES = {'Germany': 'GER',
+                     'Scotland': 'SCO',
+                     'Hungary': 'HUN',
+                     'Switzerland': 'SUI',
+                     'Spain': 'ESP',
+                     'Croatia': 'CRO',
+                     'Italy': 'ITA',
+                     'Albania': 'ALB',
+                     'Slovenia': 'SVN',
+                     'Denmark': 'DEN',
+                     'Serbia': 'SRB',
+                     'England': 'ENG',
+                     'Poland': 'POL',
+                     'Netherlands': 'NED',
+                     'Austria': 'AUT',
+                     'France': 'FRA',
+                     'Romania': 'ROU',
+                     'Ukraine': 'UKR',
+                     'Belgium': 'BEL',
+                     'Slovakia': 'SVK',
+                     'Turkey': 'TUR',
+                     'Georgia': 'GEO',
+                     'Portugal': 'POR',
+                     'Czech Republic': 'CZE'}
 
 # LOAD PREDICTIONS
 BASE_DIR = 'app/assets/predictions/'
@@ -147,17 +179,18 @@ COLUMNS = [
         {
             "name": name.split('.')[0].title(),
             "id": name,
+            "presentation": "markdown"
         }
         for name in files
     ]
 ]
 
 TABLE_STYLE_CELL_CONDITIONAL = [
-    {'if': {'column_id': 'date'}, 'width': '5vw', 'white-space': 'normal'},
-    {'if': {'column_id': 'match'}, 'width': '15vw'},
-    {'if': {'column_id': 'result'}, 'width': '5vw'},
+    {'if': {'column_id': 'date'}, 'width': '20px', 'white-space': 'normal'},
+    {'if': {'column_id': 'match'}, 'width': '120px'},
+    {'if': {'column_id': 'result'}, 'width': '20px'},
     *[
-        {'if': {'column_id': name}, 'width': '30vw', }
+        {'if': {'column_id': name}, 'width': '50px', }
         for name in files
     ]
 ]
@@ -433,11 +466,10 @@ def load_matches(x, show_groups):
 
     print('Calling the API')
     try:
-        response = r.get(
-            'https://raw.githubusercontent.com/openfootball/euro.json/master/2024/euro.json', timeout=8)
-        print(f'Response status code: {response.status_code}')
-        rounds = response.json()['rounds']
-        rounds += final_matches
+        # response = r.get(
+        #     'https://raw.githubusercontent.com/openfootball/euro.json/master/2024/euro.json', timeout=8)
+        # print(f'Response status code: {response.status_code}')
+        rounds = final_matches['rounds']
         # UNCOMMENT FOR TESTING
         # with open('tests/matches.json', 'r') as f:
         #     rounds = json.load(f)['rounds']
@@ -457,6 +489,12 @@ def load_matches(x, show_groups):
 
     match_rows = []
     added_matches = []
+
+    real_octavos_teams = []  # teams advancing to knockout stage
+    real_cuartos_teams = []  # quarter-finalists
+    real_semis_teams = []  # semi-finalists
+    real_final_teams = []  # finalists
+    real_champion = ''
 
     for round in rounds:
         for match in round['matches']:
@@ -516,46 +554,59 @@ def load_matches(x, show_groups):
                 'type': round_type
             }
 
-            if row['type'] == 'Round of 16' and prev_type == 'group':
-                match_rows.append(
-                    {
-                        'date': '-',
-                        'match': f"**OCTAVOS**",
-                        'match_key': '',
-                        'home_team': '',
-                        'away_team': '',
-                        'tag': '',
-                        'result': 'Not started',
-                        'type': ''
-                    }
-                )
-            elif row['type'] == 'Quarter-finals' and prev_type == 'Round of 16':
-                match_rows.append(
-                    {
-                        'date': '-',
-                        'match': f"**CUARTOS**",
-                        'match_key': '',
-                        'home_team': '',
-                        'away_team': '',
-                        'tag': '',
-                        'result': 'Not started',
-                        'type': ''
-                    }
-                )
-            elif row['type'] == 'Semi-finals' and prev_type == 'Quarter-finals':
-                match_rows.append(
-                    {
-                        'date': '-',
-                        'match': f"**SEMIS**",
-                        'match_key': '',
-                        'home_team': '',
-                        'away_team': '',
-                        'tag': '',
-                        'result': 'Not started',
-                        'type': ''
-                    }
-                )
+            if row['type'] == 'Round of 16':
+                real_octavos_teams.append(home_team)
+                real_octavos_teams.append(away_team)
+                if prev_type == 'group':
+                    match_rows.append(
+                        {
+                            'date': '-',
+                            'match': f"**OCTAVOS**",
+                            'match_key': '',
+                            'home_team': '',
+                            'away_team': '',
+                            'tag': '',
+                            'result': 'Not started',
+                            'type': ''
+                        }
+                    )
+            elif row['type'] == 'Quarter-finals':
+                real_cuartos_teams.append(home_team)
+                real_cuartos_teams.append(away_team)
+                if prev_type == 'Round of 16':
+                    match_rows.append(
+                        {
+                            'date': '-',
+                            'match': f"**CUARTOS**",
+                            'match_key': '',
+                            'home_team': '',
+                            'away_team': '',
+                            'tag': '',
+                            'result': 'Not started',
+                            'type': ''
+                        }
+                    )
+            elif row['type'] == 'Semi-finals':
+                row['tag'] += f" {match.get('num', 0)}"
+                match_tag += f" {match.get('num', 0)}"
+                real_semis_teams.append(home_team)
+                real_semis_teams.append(away_team)
+                if prev_type == 'Quarter-finals':
+                    match_rows.append(
+                        {
+                            'date': '-',
+                            'match': f"**SEMIS**",
+                            'match_key': '',
+                            'home_team': '',
+                            'away_team': '',
+                            'tag': '',
+                            'result': 'Not started',
+                            'type': ''
+                        }
+                    )
             elif row['type'] == 'Final' and prev_type == 'Semi-finals':
+                real_final_teams.append(home_team)
+                real_final_teams.append(away_team)
                 match_rows.append(
                     {
                         'date': '-',
@@ -575,6 +626,19 @@ def load_matches(x, show_groups):
                 match_rows.append(row)
                 added_matches.append(match_tag)
 
+    match_rows.append(
+        {
+            'date': '-',
+            'match': f"**GANADOR**",
+            'match_key': '',
+            'home_team': '',
+            'away_team': '',
+            'tag': 'winner',
+            'result': 'Not started',
+            'type': ''
+        }
+    )
+
     styles = [
         {
             "if": {"state": "selected"},
@@ -582,6 +646,13 @@ def load_matches(x, show_groups):
             "border": "1px solid rgb(211, 211, 211)",
         }
     ]
+
+    real_teams = {
+        'Round of 16': real_octavos_teams,
+        'Quarter-finals': real_cuartos_teams,
+        'Semi-finals': real_semis_teams,
+        'Final': real_final_teams
+    }
 
     pred_rows = []
 
@@ -602,7 +673,7 @@ def load_matches(x, show_groups):
             clean_preds[76:84] + \
             clean_preds[92:96] + \
             clean_preds[100:102] + \
-            [clean_preds[105]]
+            [clean_preds[104]]
 
         octavos_teams = clean_preds[60:76]  # teams advancing to knockout stage
         cuartos_teams = clean_preds[84:92]  # quarter-finalists
@@ -612,6 +683,13 @@ def load_matches(x, show_groups):
 
         for match in match_rows:
             if match['date'] == '-':
+                match[file] = '---'
+                if match['tag'] == 'winner':
+                    champion_team_code = TEAMS_NAMES_CODES[TEAMS_ES_EN[champion_team]]
+                    champion_team_flag = f"assets/country-flags/{champion_team_code}.png"
+                    if champion_team == real_champion:
+                        champion_team = f'**{champion_team}**'
+                    match[file] = f"![home_flag]({champion_team_flag}) {champion_team}"
                 continue
             try:
                 match_idx = MATCH_TAGS.index(match['tag'])
@@ -625,30 +703,46 @@ def load_matches(x, show_groups):
                         pred_row['octavos'] += 1
                     if match['away_team'] in octavos_teams:
                         pred_row['octavos'] += 1
-
-                if match['type'] == 'Quarter-finals':
+                elif match['type'] == 'Quarter-finals':
                     if match['home_team'] in cuartos_teams:
                         pred_row['cuartos'] += 1
                     if match['away_team'] in cuartos_teams:
                         pred_row['cuartos'] += 1
-
-                if match['type'] == 'Semi-finals':
+                elif match['type'] == 'Semi-finals':
                     if match['home_team'] in semis_teams:
                         pred_row['semis'] += 1
                     if match['away_team'] in semis_teams:
                         pred_row['semis'] += 1
-
-                if match['type'] == 'Final':
+                elif match['type'] == 'Final':
                     if match['home_team'] in final_teams:
                         pred_row['final'] += 1
                     if match['away_team'] in final_teams:
                         pred_row['final'] += 1
-                    if champion_team == '':
+                    if champion_team == real_champion:
                         pred_row['campeon'] += 1
 
                 # Check if the teams are right
                 if match['type'] != 'group' and match['match_key'] != group_stage_preds[match_idx].split('·')[0]:
-                    match[file] = '-'
+                    pred_match = group_stage_preds[match_idx].split('·')[0]
+                    teams = pred_match.split('-')
+                    home_team = teams[0]
+                    home_team_code = TEAMS_NAMES_CODES[TEAMS_ES_EN[home_team]]
+                    home_team_flag = f"assets/country-flags/{home_team_code}.png"
+                    away_team = teams[1]
+                    away_team_code = TEAMS_NAMES_CODES[TEAMS_ES_EN[away_team]]
+                    away_team_flag = f"assets/country-flags/{away_team_code}.png"
+
+                    por_definir = 'Por definir' in real_teams[match['type']]
+                    if home_team in real_teams[match['type']]:
+                        home_team = f'**{home_team}**'
+                    elif not por_definir:
+                        home_team = f'~~{home_team}~~'
+                    if away_team in real_teams[match['type']]:
+                        away_team = f'**{away_team}**'
+                    elif not por_definir:
+                        away_team = f'~~{away_team}~~'
+
+                    match[file] = f"![home_flag]({home_team_flag}) {home_team} vs {away_team} ![away_flag]({away_team_flag})"
                 elif match['result'] != 'Not started':
                     real_result = [int(goals)
                                    for goals in match['result'].split('-')]
