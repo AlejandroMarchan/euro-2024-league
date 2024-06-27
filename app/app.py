@@ -291,7 +291,7 @@ app.layout = html.Div(
                             options=[
                                 {"label": "Mostrar fase de Grupos", "value": 1}
                             ],
-                            value=[1],
+                            value=[],
                             id="groups-input",
                             switch=True
                         ),
@@ -518,30 +518,9 @@ def load_matches(x, show_groups):
             else:
                 round_type = 'group'
 
-            if match_tag == 'Suiza-Alemania':
+            if match_tag == 'Test-Test':
                 home_score = 1
                 away_score = 1
-            elif match_tag == 'Escocia-Hungría':
-                home_score = 0
-                away_score = 1
-            elif match_tag == 'Albania-España':
-                home_score = 0
-                away_score = 1
-            elif match_tag == 'Croacia-Italia':
-                home_score = 1
-                away_score = 1
-            elif match_tag == 'Francia-Polonia':
-                home_score = 1
-                away_score = 1
-            elif match_tag == 'Países Bajos-Austria':
-                home_score = 2
-                away_score = 3
-            elif match_tag == 'Inglaterra-Eslovenia':
-                home_score = 0
-                away_score = 0
-            elif match_tag == 'Dinamarca-Serbia':
-                home_score = 0
-                away_score = 0
 
             row = {
                 'date': date.strftime('%a, %d %b, %H:%M').title(),

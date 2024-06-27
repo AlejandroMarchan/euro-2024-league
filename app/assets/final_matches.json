@@ -17,14 +17,8 @@
             "code": "SCO"
           },
           "score": {
-            "ft": [
-              5,
-              1
-            ],
-            "ht": [
-              3,
-              0
-            ]
+            "ft": [5, 1],
+            "ht": [3, 0]
           },
           "goals1": [
             {
@@ -73,14 +67,8 @@
             "code": "SUI"
           },
           "score": {
-            "ft": [
-              1,
-              3
-            ],
-            "ht": [
-              0,
-              2
-            ]
+            "ft": [1, 3],
+            "ht": [0, 2]
           },
           "goals1": [
             {
@@ -118,14 +106,8 @@
             "code": "CRO"
           },
           "score": {
-            "ft": [
-              3,
-              0
-            ],
-            "ht": [
-              3,
-              0
-            ]
+            "ft": [3, 0],
+            "ht": [3, 0]
           },
           "goals1": [
             {
@@ -158,14 +140,8 @@
             "code": "ALB"
           },
           "score": {
-            "ft": [
-              2,
-              1
-            ],
-            "ht": [
-              2,
-              1
-            ]
+            "ft": [2, 1],
+            "ht": [2, 1]
           },
           "goals1": [
             {
@@ -198,14 +174,8 @@
             "code": "DEN"
           },
           "score": {
-            "ft": [
-              1,
-              1
-            ],
-            "ht": [
-              0,
-              1
-            ]
+            "ft": [1, 1],
+            "ht": [0, 1]
           },
           "goals1": [
             {
@@ -234,14 +204,8 @@
             "code": "ENG"
           },
           "score": {
-            "ft": [
-              0,
-              1
-            ],
-            "ht": [
-              0,
-              1
-            ]
+            "ft": [0, 1],
+            "ht": [0, 1]
           },
           "goals1": [],
           "goals2": [
@@ -265,14 +229,8 @@
             "code": "NED"
           },
           "score": {
-            "ft": [
-              1,
-              2
-            ],
-            "ht": [
-              1,
-              1
-            ]
+            "ft": [1, 2],
+            "ht": [1, 1]
           },
           "goals1": [
             {
@@ -305,14 +263,8 @@
             "code": "FRA"
           },
           "score": {
-            "ft": [
-              0,
-              1
-            ],
-            "ht": [
-              0,
-              1
-            ]
+            "ft": [0, 1],
+            "ht": [0, 1]
           },
           "goals1": [],
           "goals2": [
@@ -337,14 +289,8 @@
             "code": "UKR"
           },
           "score": {
-            "ft": [
-              3,
-              0
-            ],
-            "ht": [
-              1,
-              0
-            ]
+            "ft": [3, 0],
+            "ht": [1, 0]
           },
           "goals1": [
             {
@@ -376,14 +322,8 @@
             "code": "SVK"
           },
           "score": {
-            "ft": [
-              0,
-              1
-            ],
-            "ht": [
-              0,
-              1
-            ]
+            "ft": [0, 1],
+            "ht": [0, 1]
           },
           "goals1": [],
           "goals2": [
@@ -407,14 +347,8 @@
             "code": "GEO"
           },
           "score": {
-            "ft": [
-              3,
-              1
-            ],
-            "ht": [
-              1,
-              1
-            ]
+            "ft": [3, 1],
+            "ht": [1, 1]
           },
           "goals1": [
             {
@@ -452,14 +386,8 @@
             "code": "CZE"
           },
           "score": {
-            "ft": [
-              2,
-              1
-            ],
-            "ht": [
-              0,
-              0
-            ]
+            "ft": [2, 1],
+            "ht": [0, 0]
           },
           "goals1": [
             {
@@ -499,14 +427,8 @@
             "code": "HUN"
           },
           "score": {
-            "ft": [
-              2,
-              0
-            ],
-            "ht": [
-              1,
-              0
-            ]
+            "ft": [2, 0],
+            "ht": [1, 0]
           },
           "goals1": [
             {
@@ -534,14 +456,8 @@
             "code": "SUI"
           },
           "score": {
-            "ft": [
-              1,
-              1
-            ],
-            "ht": [
-              1,
-              1
-            ]
+            "ft": [1, 1],
+            "ht": [1, 1]
           },
           "goals1": [
             {
@@ -570,14 +486,8 @@
             "code": "ALB"
           },
           "score": {
-            "ft": [
-              2,
-              2
-            ],
-            "ht": [
-              0,
-              1
-            ]
+            "ft": [2, 2],
+            "ht": [0, 1]
           },
           "goals1": [
             {
@@ -616,14 +526,8 @@
             "code": "ITA"
           },
           "score": {
-            "ft": [
-              1,
-              0
-            ],
-            "ht": [
-              0,
-              0
-            ]
+            "ft": [1, 0],
+            "ht": [0, 0]
           },
           "goals1": [
             {
@@ -648,14 +552,8 @@
             "code": "SRB"
           },
           "score": {
-            "ft": [
-              1,
-              1
-            ],
-            "ht": [
-              0,
-              0
-            ]
+            "ft": [1, 1],
+            "ht": [0, 0]
           },
           "goals1": [
             {
@@ -685,14 +583,8 @@
             "code": "ENG"
           },
           "score": {
-            "ft": [
-              1,
-              1
-            ],
-            "ht": [
-              1,
-              1
-            ]
+            "ft": [1, 1],
+            "ht": [1, 1]
           },
           "goals1": [
             {
@@ -721,14 +613,8 @@
             "code": "AUT"
           },
           "score": {
-            "ft": [
-              1,
-              3
-            ],
-            "ht": [
-              1,
-              1
-            ]
+            "ft": [1, 3],
+            "ht": [1, 1]
           },
           "goals1": [
             {
@@ -766,14 +652,8 @@
             "code": "FRA"
           },
           "score": {
-            "ft": [
-              0,
-              0
-            ],
-            "ht": [
-              0,
-              0
-            ]
+            "ft": [0, 0],
+            "ht": [0, 0]
           },
           "group": "Group D"
         },
@@ -790,14 +670,8 @@
             "code": "UKR"
           },
           "score": {
-            "ft": [
-              1,
-              2
-            ],
-            "ht": [
-              1,
-              0
-            ]
+            "ft": [1, 2],
+            "ht": [1, 0]
           },
           "goals1": [
             {
@@ -830,14 +704,8 @@
             "code": "ROU"
           },
           "score": {
-            "ft": [
-              2,
-              0
-            ],
-            "ht": [
-              1,
-              0
-            ]
+            "ft": [2, 0],
+            "ht": [1, 0]
           },
           "goals1": [
             {
@@ -865,14 +733,8 @@
             "code": "CZE"
           },
           "score": {
-            "ft": [
-              1,
-              1
-            ],
-            "ht": [
-              1,
-              0
-            ]
+            "ft": [1, 1],
+            "ht": [1, 0]
           },
           "goals1": [
             {
@@ -903,14 +765,8 @@
             "code": "POR"
           },
           "score": {
-            "ft": [
-              0,
-              3
-            ],
-            "ht": [
-              0,
-              2
-            ]
+            "ft": [0, 3],
+            "ht": [0, 2]
           },
           "goals1": [],
           "goals2": [
@@ -948,14 +804,8 @@
             "code": "GER"
           },
           "score": {
-            "ft": [
-              1,
-              1
-            ],
-            "ht": [
-              1,
-              0
-            ]
+            "ft": [1, 1],
+            "ht": [1, 0]
           },
           "goals1": [
             {
@@ -985,14 +835,8 @@
             "code": "HUN"
           },
           "score": {
-            "ft": [
-              0,
-              1
-            ],
-            "ht": [
-              0,
-              0
-            ]
+            "ft": [0, 1],
+            "ht": [0, 0]
           },
           "group": "Group A"
         },
@@ -1009,14 +853,8 @@
             "code": "ESP"
           },
           "score": {
-            "ft": [
-              0,
-              1
-            ],
-            "ht": [
-              0,
-              1
-            ]
+            "ft": [0, 1],
+            "ht": [0, 1]
           },
           "goals1": [],
           "goals2": [
@@ -1040,14 +878,8 @@
             "code": "ITA"
           },
           "score": {
-            "ft": [
-              1,
-              1
-            ],
-            "ht": [
-              0,
-              0
-            ]
+            "ft": [1, 1],
+            "ht": [0, 0]
           },
           "goals1": [
             {
@@ -1077,14 +909,8 @@
             "code": "SVN"
           },
           "score": {
-            "ft": [
-              0,
-              0
-            ],
-            "ht": [
-              0,
-              0
-            ]
+            "ft": [0, 0],
+            "ht": [0, 0]
           },
           "group": "Group C"
         },
@@ -1101,14 +927,8 @@
             "code": "SRB"
           },
           "score": {
-            "ft": [
-              0,
-              0
-            ],
-            "ht": [
-              0,
-              0
-            ]
+            "ft": [0, 0],
+            "ht": [0, 0]
           },
           "group": "Group C"
         },
@@ -1125,14 +945,8 @@
             "code": "AUT"
           },
           "score": {
-            "ft": [
-              2,
-              3
-            ],
-            "ht": [
-              0,
-              1
-            ]
+            "ft": [2, 3],
+            "ht": [0, 1]
           },
           "goals1": [
             {
@@ -1174,14 +988,8 @@
             "code": "POL"
           },
           "score": {
-            "ft": [
-              1,
-              1
-            ],
-            "ht": [
-              0,
-              0
-            ]
+            "ft": [1, 1],
+            "ht": [0, 0]
           },
           "goals1": [
             {
@@ -1211,7 +1019,9 @@
             "name": "Romania",
             "code": "ROU"
           },
-          "score": {},
+          "score": {
+            "ft": [1, 1]
+          },
           "group": "Group E"
         },
         {
@@ -1226,7 +1036,9 @@
             "name": "Belgium",
             "code": "BEL"
           },
-          "score": {},
+          "score": {
+            "ft": [0, 0]
+          },
           "group": "Group E"
         },
         {
@@ -1241,7 +1053,9 @@
             "name": "Portugal",
             "code": "POR"
           },
-          "score": {},
+          "score": {
+            "ft": [2, 0]
+          },
           "group": "Group F"
         },
         {
@@ -1256,7 +1070,9 @@
             "name": "Turkey",
             "code": "TUR"
           },
-          "score": {},
+          "score": {
+            "ft": [1, 2]
+          },
           "group": "Group F"
         }
       ]
@@ -1280,37 +1096,37 @@
           "date": "2024-06-30",
           "time": "18:00",
           "team1": { "name": "England", "code": "ENG" },
-          "team2": { "name": "Por definir", "code": "TBD" }
+          "team2": { "name": "Slovakia", "code": "SVK" }
         },
         {
           "date": "2024-06-30",
           "time": "21:00",
           "team1": { "name": "Spain", "code": "ESP" },
-          "team2": { "name": "Por definir", "code": "TBD" }
+          "team2": { "name": "Georgia", "code": "GEO" }
         },
         {
           "date": "2024-07-01",
           "time": "18:00",
           "team1": { "name": "France", "code": "FRA" },
-          "team2": { "name": "Por definir", "code": "TBD" }
+          "team2": { "name": "Belgium", "code": "BEL" }
         },
         {
           "date": "2024-07-01",
           "time": "21:00",
           "team1": { "name": "Portugal", "code": "POR" },
-          "team2": { "name": "Por definir", "code": "TBD" }
+          "team2": { "name": "Slovenia", "code": "SVN" }
         },
         {
           "date": "2024-07-02",
           "time": "18:00",
-          "team1": { "name": "Por definir", "code": "TBD" },
-          "team2": { "name": "Por definir", "code": "TBD" }
+          "team1": { "name": "Romania", "code": "ROU" },
+          "team2": { "name": "Netherlands", "code": "NED" }
         },
         {
           "date": "2024-07-02",
           "time": "21:00",
           "team1": { "name": "Austria", "code": "AUT" },
-          "team2": { "name": "Por definir", "code": "TBD" }
+          "team2": { "name": "Turkey", "code": "TUR" }
         }
       ]
     },
