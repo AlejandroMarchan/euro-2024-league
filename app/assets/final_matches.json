@@ -1084,25 +1084,37 @@
           "date": "2024-06-29",
           "time": "18:00",
           "team1": { "name": "Switzerland", "code": "SUI" },
-          "team2": { "name": "Italy", "code": "ITA" }
+          "team2": { "name": "Italy", "code": "ITA" },
+          "score": {
+            "ft": [2, 0]
+          }
         },
         {
           "date": "2024-06-29",
           "time": "21:00",
           "team1": { "name": "Germany", "code": "GER" },
-          "team2": { "name": "Denmark", "code": "DEN" }
+          "team2": { "name": "Denmark", "code": "DEN" },
+          "score": {
+            "ft": [2, 0]
+          }
         },
         {
           "date": "2024-06-30",
           "time": "18:00",
           "team1": { "name": "England", "code": "ENG" },
-          "team2": { "name": "Slovakia", "code": "SVK" }
+          "team2": { "name": "Slovakia", "code": "SVK" },
+          "score": {
+            "ft": [2, 1]
+          }
         },
         {
           "date": "2024-06-30",
           "time": "21:00",
           "team1": { "name": "Spain", "code": "ESP" },
-          "team2": { "name": "Georgia", "code": "GEO" }
+          "team2": { "name": "Georgia", "code": "GEO" },
+          "score": {
+            "ft": [4, 1]
+          }
         },
         {
           "date": "2024-07-01",
