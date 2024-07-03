@@ -1138,13 +1138,19 @@
           "date": "2024-07-02",
           "time": "18:00",
           "team1": { "name": "Romania", "code": "ROU" },
-          "team2": { "name": "Netherlands", "code": "NED" }
+          "team2": { "name": "Netherlands", "code": "NED" },
+          "score": {
+            "ft": [0, 3]
+          }
         },
         {
           "date": "2024-07-02",
           "time": "21:00",
           "team1": { "name": "Austria", "code": "AUT" },
-          "team2": { "name": "Turkey", "code": "TUR" }
+          "team2": { "name": "Turkey", "code": "TUR" },
+          "score": {
+            "ft": [1, 2]
+          }
         }
       ]
     },
@@ -1166,14 +1172,14 @@
         {
           "date": "2024-07-06",
           "time": "18:00",
-          "team1": { "name": "Por definir", "code": "TBD" },
-          "team2": { "name": "Por definir", "code": "TBD" }
+          "team1": { "name": "England", "code": "ENG" },
+          "team2": { "name": "Switzerland", "code": "SUI" }
         },
         {
           "date": "2024-07-06",
           "time": "21:00",
-          "team1": { "name": "Por definir", "code": "TBD" },
-          "team2": { "name": "Por definir", "code": "TBD" }
+          "team1": { "name": "Netherlands", "code": "NED" },
+          "team2": { "name": "Turkey", "code": "TUR" }
         }
       ]
     },
