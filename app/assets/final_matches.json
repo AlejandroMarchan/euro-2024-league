@@ -1161,25 +1161,45 @@
           "date": "2024-07-05",
           "time": "18:00",
           "team1": { "name": "Spain", "code": "ESP" },
-          "team2": { "name": "Germany", "code": "GER" }
+          "team2": { "name": "Germany", "code": "GER" },
+          "score": {
+            "ft": [2, 1],
+            "ht": [0, 0]
+          }
         },
         {
           "date": "2024-07-05",
           "time": "21:00",
           "team1": { "name": "Portugal", "code": "POR" },
-          "team2": { "name": "France", "code": "FRA" }
+          "team2": { "name": "France", "code": "FRA" },
+          "score": {
+            "ft": [0, 0],
+            "ht": [0, 0],
+            "et": [0, 0],
+            "p": [3, 5]
+          }
         },
         {
           "date": "2024-07-06",
           "time": "18:00",
           "team1": { "name": "England", "code": "ENG" },
-          "team2": { "name": "Switzerland", "code": "SUI" }
+          "team2": { "name": "Switzerland", "code": "SUI" },
+          "score": {
+            "ft": [1, 1],
+            "ht": [0, 0],
+            "et": [1, 1],
+            "p": [5, 3]
+          }
         },
         {
           "date": "2024-07-06",
           "time": "21:00",
           "team1": { "name": "Netherlands", "code": "NED" },
-          "team2": { "name": "Turkey", "code": "TUR" }
+          "team2": { "name": "Turkey", "code": "TUR" },
+          "score": {
+            "ft": [2, 1],
+            "ht": [0, 1]
+          }
         }
       ]
     },
@@ -1187,18 +1207,30 @@
       "name": "Semi-finals",
       "matches": [
         {
-          "num": 60,
-          "date": "2024-07-10",
+          "num": 49,
+          "date": "2024-07-09",
           "time": "21:00",
-          "team1": { "name": "Por definir", "code": "TBD" },
-          "team2": { "name": "Por definir", "code": "TBD" }
+          "team1": {
+            "name": "Spain",
+            "code": "ESP"
+          },
+          "team2": {
+            "name": "France",
+            "code": "FRA"
+          }
         },
         {
-          "num": 61,
+          "num": 50,
           "date": "2024-07-10",
           "time": "21:00",
-          "team1": { "name": "Por definir", "code": "TBD" },
-          "team2": { "name": "Por definir", "code": "TBD" }
+          "team1": {
+            "name": "Netherlands",
+            "code": "NED"
+          },
+          "team2": {
+            "name": "England",
+            "code": "ENG"
+          }
         }
       ]
     },
