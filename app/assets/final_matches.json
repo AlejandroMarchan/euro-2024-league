@@ -1217,6 +1217,10 @@
           "team2": {
             "name": "France",
             "code": "FRA"
+          },
+          "score": {
+            "ft": [2, 1],
+            "ht": [2, 1]
           }
         },
         {
@@ -1240,7 +1244,7 @@
         {
           "date": "2024-07-14",
           "time": "21:00",
-          "team1": { "name": "Por definir", "code": "TBD" },
+          "team1": { "name": "Spain", "code": "ESP" },
           "team2": { "name": "Por definir", "code": "TBD" }
         }
       ]
