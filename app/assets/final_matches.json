@@ -1234,6 +1234,10 @@
           "team2": {
             "name": "England",
             "code": "ENG"
+          },
+          "score": {
+            "ft": [1, 2],
+            "ht": [1, 1]
           }
         }
       ]
@@ -1245,7 +1249,7 @@
           "date": "2024-07-14",
           "time": "21:00",
           "team1": { "name": "Spain", "code": "ESP" },
-          "team2": { "name": "Por definir", "code": "TBD" }
+          "team2": { "name": "England", "code": "ENG" }
         }
       ]
     }
