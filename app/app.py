@@ -494,7 +494,7 @@ def load_matches(x, show_groups):
     real_cuartos_teams = []  # quarter-finalists
     real_semis_teams = []  # semi-finalists
     real_final_teams = []  # finalists
-    real_champion = ''
+    real_champion = 'España'
 
     for round in rounds:
         for match in round['matches']:
@@ -668,7 +668,7 @@ def load_matches(x, show_groups):
                     champion_team_flag = f"assets/country-flags/{champion_team_code}.png"
                     if champion_team == real_champion:
                         champion_team = f'**{champion_team}**'
-                    elif champion_team not in ['España', 'Inglaterra']:
+                    else:
                         champion_team = f'~~{champion_team}~~'
                     match[file] = f"![home_flag]({champion_team_flag}) {champion_team}"
                 continue

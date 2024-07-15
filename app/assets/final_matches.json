@@ -1249,7 +1249,11 @@
           "date": "2024-07-14",
           "time": "21:00",
           "team1": { "name": "Spain", "code": "ESP" },
-          "team2": { "name": "England", "code": "ENG" }
+          "team2": { "name": "England", "code": "ENG" },
+          "score": {
+            "ft": [2, 1],
+            "ht": [0, 0]
+          }
         }
       ]
     }
